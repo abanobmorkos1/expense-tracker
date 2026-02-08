@@ -4,14 +4,13 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT ;
 const uri = process.env.mongodb_uri;
 
 // middleware
 app.use(express.json());
 app.use(morgan('dev'));
 
-// Connect to MongoDB
 mongoose.connect(uri);
 
 mongoose.connection
